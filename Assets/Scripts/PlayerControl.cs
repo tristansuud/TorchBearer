@@ -141,6 +141,7 @@ public class PlayerControl : MonoBehaviour
     }
     void HandleAnimation()
     {
+        if (GameLogic.currentLevel != null) animator.SetBool("mainMenu", false);
         animator.SetFloat(AnimParams.Speed, controller.velocity.magnitude);
         if (isJump) animator.SetTrigger(AnimParams.Jump);
     }
