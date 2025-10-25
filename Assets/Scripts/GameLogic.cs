@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
-public class GameLogic : MonoBehaviour
+public static class GameLogic
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static string currentLevel { get; private set; }
+    static string LevelsPath;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // public List<Level> FetchLevels() {}
+
+    // public bool LoadLevel(string level) { return true if (success) else false}
+
+    // public void , ??)
 }
