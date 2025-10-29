@@ -12,8 +12,9 @@ public class Level
     public bool unlocked;
     public bool finished;
     public float bestTimeCompletion;
+    public List<string> unlockedLevels;
 
-    public void UpdateState(string? sceneString = null,string? name = null, bool? unlocked = null, bool? finished = null, float? bestTimeCompletion = null)
+    public void UpdateState(string? sceneString = null,string? name = null, bool? unlocked = null, bool? finished = null, float? bestTimeCompletion = null, List<string>? unlockedLevels = null)
     {
         if (sceneString != null) this.sceneString = sceneString;
         if (name != null) this.name = name;

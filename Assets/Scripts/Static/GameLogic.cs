@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -72,7 +73,10 @@ public static class GameLogic
     public static void LoadLevel() 
     {
         if (currentLevel == null) return;
-        SceneManager.LoadScene(currentLevel.sceneString);
+        
+        SceneManager.LoadScene(currentLevel.sceneString, LoadSceneMode.Single);
+        
+
     }
     public static Level GetLevel(string levelId)
     {
@@ -85,9 +89,30 @@ public static class GameLogic
         SaveSystem.SaveLevels(Levels.Values.ToList());
     }
 
+    public static List<Level> GetLevelList()
+    {
+        return Levels.Values.ToList();
+    }
     // public Setting GetSetting{} //get the settings object so that scripts can just modify the instance. Setting object will also apply the settings.
 
+    public static void LevelWin()
+    {
+        currentLevel.bestTimeCompletion = 0f;
+        currentLevel.finished = true;
+        //unlock next level (how)
+    }
+    public static void LevelLose()
+    {
 
+    }
+    public static void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
+    }
 
 
 }

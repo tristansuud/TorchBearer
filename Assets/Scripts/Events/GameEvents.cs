@@ -4,6 +4,26 @@ using UnityEngine;
 
 namespace GameEvents
 {
+    public class GameStart : EventData //when app starts
+    {
+
+    }
+    public class LevelSelectRefresh : EventData
+    {
+        
+    }
+    public class  LevelSelect: EventData
+    {
+        public Level selectedLevel;
+        public LevelSelect(Level selectedLevel)
+        {
+            this.selectedLevel = selectedLevel;
+        }
+    }
+    public class LevelEnter : EventData
+    {
+
+    }
     public class LevelStart : EventData //When level starts
     {
 
@@ -16,6 +36,14 @@ namespace GameEvents
     {
         
     }
+    public class LevelExit : EventData // When going back from level to main menu
+    {
+    
+    }
+    public class LevelTimerUpdate : EventData
+    {
+
+    }
     public class TriggerSelected : EventData
     {
 
@@ -24,6 +52,7 @@ namespace GameEvents
     {
         
     }
+    
 }
 
 
