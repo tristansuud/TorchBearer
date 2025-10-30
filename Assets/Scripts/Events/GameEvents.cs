@@ -30,7 +30,7 @@ namespace GameEvents
     }
     public class LevelClear : EventData //When player reaches exit
     {
-
+        public float completionTime;
     }
     public class  LevelFail : EventData // When torch Runs out
     {

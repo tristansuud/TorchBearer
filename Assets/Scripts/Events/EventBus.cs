@@ -15,6 +15,10 @@ public static class EventBus
         if (assignedEvents.TryGetValue(type, out Delegate existingAction))
         {
             existingAction?.DynamicInvoke(data);
+            if (existingAction == null)
+            {
+                Debug.Log("EventBus: empty event fired.");
+            }
         }
     }
 

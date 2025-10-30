@@ -36,6 +36,7 @@ public class MainMenu : MonoBehaviour
     public void SelectLevel(LevelSelect parameters)
     {
         GameLogic.SelectLevel(parameters.selectedLevel.id);
+        
     }
     public void LoadLevel()
     {
