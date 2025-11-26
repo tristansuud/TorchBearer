@@ -26,7 +26,5 @@ public class Level
 
         if (bestTimeCompletion.HasValue)
             this.bestTimeCompletion = bestTimeCompletion.Value;
-
-        
     }
 }

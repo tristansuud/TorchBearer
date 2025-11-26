@@ -115,9 +115,12 @@ public class PlayerControl : MonoBehaviour
         {
             verticalVelocity = JumpInitialVelocity;
             
+
         } else if (isGrounded)
         {
-            verticalVelocity = -0.1f; // reset when touching ground
+            verticalVelocity = -1f; // reset when touching ground
+            isJump = false;
+            
         }
         else
         {
